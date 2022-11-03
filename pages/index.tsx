@@ -5,6 +5,12 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [ran, setRan] = useState(0);
+  const [clicked, setClicked] = useState(0);
+
+  const tryFoo = () => {
+    setClicked(clicked + 100);
+  };
+
   const mathRandom = useCallback(() => {
     setRan(Math.random());
   }, []);
@@ -26,6 +32,8 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <div>{ran}</div>
+        <div className="clickkkkk">{clicked}</div>
+        <button onClick={() => tryFoo()}>Click it</button>
 
         <p className={styles.description}>
           Get started by editing{" "}
